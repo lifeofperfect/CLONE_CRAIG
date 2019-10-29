@@ -7,24 +7,70 @@
     <title>Clone craig</title>
     <meta name="viewport" content="width-device-width, initial-scale=1"/>
     <link rel="'stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </head>
 <body>
+
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">CLONE-CRAIG</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="/">HOME</a></li>
       </ul>
     </div>
   </nav>
-<h2>Testing to see if this works</h2>
+
+<div class="container">
+
+</div>
+    <h1 style="text-align: center;">What do you want for on <strong>CLONE-CRAIG</strong></h1>
+<div class="row">
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons" style="color: #EE6E73">flight</i>
+            <p>Fast craig list webscrapper</p>
+            <p class="light center">Scrape away right here with a Cool GUI.</p>
+        </div>
+    </div>
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons" style="color: greenyellow">attach_money</i>
+            <p>Filter your searches</p>
+            <p class="light center">We filter based on prices here</p>
+        </div>
+    </div>
+
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons" style="color: mediumvioletred">business</i>
+            <p>A much better craiglist</p>
+            <p class="light center">way better and easier to navigate</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="search" placeholder="search">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+    </form>
+
+    {% block content %}
+
+{% endblock content %}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 </html>
